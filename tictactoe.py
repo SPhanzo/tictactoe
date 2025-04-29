@@ -2,11 +2,11 @@ import tkinter
 import tkinter.font
 
 window = tkinter.Tk()
-window.title = ('Tic-Tac-Toe') #title bar text
+window.title = ('Tic-Tac-Toe')
 
-currentplayer = 'X' #starts with player X
+currentplayer = 'X'
 
-board = [[0,0,0],  #matrix for the board
+board = [[0,0,0],
          [0,0,0],
          [0,0,0]]
 
@@ -18,19 +18,19 @@ color_blue= '#0000FF'
 frame = tkinter.Frame(window)  #container for the window for organization
 frame.pack()  #adds frame to the window
 
-label = tkinter.Label(frame, text=currentplayer+"'s turn", font = ('Comic Sans MS', 20)) #labels current player's turn
+label = tkinter.Label(frame, text=currentplayer+"'s turn", font = ('Comic Sans MS', 20))
 label.grid(row = 0 , column = 0, columnspan = 3) #places it on the top of the frame
 
 
 def move_maker(row, column):
-    global currentplayer #allows for current player globally in the code
+    global currentplayer
 
     button = board[row][column] #clicked button from board
     if button['text'] =='': #checks if button has been used
-        button['text'] = currentplayer #puts X or O depending on the current player
+        button['text'] = currentplayer 
         button['foreground'] = color_red if currentplayer == 'X' else color_blue #text for color
-        currentplayer = 'O' if currentplayer == 'X' else 'X' #switches between currentplayers X and O
-        label.config(text=currentplayer+"'s turn") #updates whose turn it is
+        currentplayer = 'O' if currentplayer == 'X' else 'X' 
+        label.config(text=currentplayer+"'s turn")
     
 
 #creates 3x3 grid
